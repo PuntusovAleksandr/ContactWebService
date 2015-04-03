@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/dao/ContactDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/dao/HobbyDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/dao/MessageDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/dao/PlaceDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/dao/impl/ContactDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/dao/impl/HobbyDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/dao/impl/MessageDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/dao/impl/PlaceDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/entity/Contact.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/entity/Hobby.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/entity/Message.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/entity/Place.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/service/ContactService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LogicalModule/src/main/resources/log4j.properties" charset="UTF-8" />
+  </component>
+</project>
