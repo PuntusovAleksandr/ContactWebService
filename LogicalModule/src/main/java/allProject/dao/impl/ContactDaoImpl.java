@@ -28,15 +28,15 @@ public class ContactDaoImpl implements ContactDao{
     @Transactional
     public List<Contact> getAllContact() {
         List<Contact> contactList = sessionFactory.getCurrentSession().createQuery("from Contact").list();
-//        if (contactList == null) {
-//            return null;
-//        }
+        if (contactList == null) {
+            return null;
+        }
         return contactList;
     }
 
     @Override
     @Transactional
-    public Contact detContact(long id) {
+    public Contact getContact(long id) {
 //        return (Contact) sessionFactory.getCurrentSession().createQuery("from contact where contact.id = :id").uniqueResult();
         return null;
     }

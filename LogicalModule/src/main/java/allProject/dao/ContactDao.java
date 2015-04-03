@@ -11,7 +11,7 @@ public interface ContactDao {
 
     void addContact(Contact contact);
     List<Contact> getAllContact();
-    Contact detContact(long id);
+    Contact getContact(long id);
 
     void deleteContact(Contact contact);
 

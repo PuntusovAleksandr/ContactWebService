@@ -6,7 +6,6 @@ import allProject.dao.MessageDao;
 import allProject.dao.PlaceDao;
 import allProject.entity.Contact;
 import allProject.entity.Hobby;
-import allProject.entity.Message;
 import allProject.entity.Place;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -50,18 +49,22 @@ public class AppAllProectLogical {
         placeDao.addPlace(new Place("Lvov"));
         System.out.println(placeDao.getAllPlace());
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        Message message = new Message();
-        message.setContactId(contactAleks.getId());
-        message.setContent("Vasilok");
-        messageDao.storeMessage(message);
-        messageDao.storeMessage(new Message(1, "прЫвет Aleks"));
+
+
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+
+
+//        Message message = new Message();
+//        message.setContactId(contactAleks.getId());
+//        message.setContent("Vasilok");
+//        messageDao.storeMessage(message);
+//        messageDao.storeMessage(new Message(1, "прЫвет Aleks"));
 //
 //        System.out.println(messageDao.getConversation(contactAleks));
 //        System.out.println(messageDao.getConversation(contactMaks));
 
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 
     }
 }

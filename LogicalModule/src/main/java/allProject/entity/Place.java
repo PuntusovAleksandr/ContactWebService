@@ -2,6 +2,7 @@ package allProject.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Created by Aleksandr on 26.03.2015.
@@ -24,10 +25,25 @@ public class Place implements Serializable {
     @Column(name = "latitude")
     private double latitude;
 
+
+    @ManyToMany(mappedBy = "places")
+    private Set<Contact> contacts;
+
+
+
     public Place() { }
 
     public Place(String title) {
         this.title = title;
+    }
+
+
+    public Set<Contact> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(Set<Contact> contacts) {
+        this.contacts = contacts;
     }
 
     public long getId() {

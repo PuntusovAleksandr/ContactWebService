@@ -2,6 +2,7 @@ package allProject.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Created by Aleksandr on 25.03.2015.
@@ -21,10 +22,24 @@ public class Hobby implements Serializable {
     @Column(name = "description")
     private String description;
 
+
+    @ManyToMany(mappedBy = "hobbies")
+    private Set<Contact> contacts;
+
+
     public Hobby() {    }
 
     public Hobby(String title) {
         this.title = title;
+    }
+
+
+    public Set<Contact> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(Set<Contact> contacts) {
+        this.contacts = contacts;
     }
 
     public long getId() {
