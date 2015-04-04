@@ -1,6 +1,7 @@
 package allProject.dao.impl;
 
 import allProject.dao.HobbyDao;
+import allProject.entity.Contact;
 import allProject.entity.Hobby;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class HobbyDaoImpl implements HobbyDao{
     @Override
     @Transactional
     public void addHobby(Hobby hobby) {
+        if (hobby==null) throw new IllegalArgumentException("Hobby must be valid");
         sessionFactory.getCurrentSession().saveOrUpdate(hobby);
     }
 
@@ -42,7 +44,20 @@ public class HobbyDaoImpl implements HobbyDao{
     @Override
     @Transactional
     public void deleteHobby(Hobby hobby) {
+        if (hobby==null) throw new IllegalArgumentException("Hobby must be valid");
         sessionFactory.getCurrentSession().delete(hobby);
+    }
+
+    @Override
+    @Transactional
+    public Set<Contact> getAllContactsWithHobby(Hobby hobby){
+        Set<Contact> contactSet = new HashSet<Contact>();
+        List<Contact> contactList = sessionFactory.getCurrentSession().createQuery("from ContactHobbies").list();
+        if (contactList == null)return null;
+        for (Contact contact : contactList){
+            contactSet.add(contact);
+        }
+        return contactSet;
     }
 
 

@@ -1,6 +1,8 @@
 package allProject.dao;
 
+import allProject.entity.Contact;
 import allProject.entity.Hobby;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Set;
 
@@ -13,4 +15,6 @@ public interface HobbyDao {
     Set<Hobby> getAllHobbies();
     void deleteHobby(Hobby hobby);
 
+    @Transactional
+    Set<Contact> getAllContactsWithHobby(Hobby hobby);
 }
