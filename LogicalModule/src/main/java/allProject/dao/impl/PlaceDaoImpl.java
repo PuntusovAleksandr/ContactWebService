@@ -23,12 +23,14 @@ public class PlaceDaoImpl implements PlaceDao{
     @Override
     @Transactional
     public void addPlace(Place place) {
+        if (place==null) throw new IllegalArgumentException("Place must be vzlid");
         sessionFactory.getCurrentSession().saveOrUpdate(place);
     }
 
     @Override
     @Transactional
     public void deletePlace(Place place) {
+        if (place==null) throw new IllegalArgumentException("Place must be vzlid");
         sessionFactory.getCurrentSession().delete(place);
     }
 
