@@ -25,6 +25,11 @@ public class Message implements Serializable {
     @Column(name = "date")
     private Date date;
 
+
+
+
+
+
     public Message() {    }
 
     public Message(long contactId, String content) {

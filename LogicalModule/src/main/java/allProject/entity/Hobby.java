@@ -33,6 +33,10 @@ public class Hobby implements Serializable {
         this.title = title;
     }
 
+    public Hobby(String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
 
     public Set<Contact> getContacts() {
         return contacts;

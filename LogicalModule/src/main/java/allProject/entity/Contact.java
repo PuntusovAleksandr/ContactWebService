@@ -4,6 +4,7 @@ package allProject.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -29,19 +30,19 @@ public class Contact implements Serializable{
 
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(name="contactHobbies",
+    @JoinTable(name="CONTACT_HOBBIES",
             joinColumns={@JoinColumn(name = "CONTACT_ID")}
             , inverseJoinColumns={@JoinColumn(name="HOBBY_ID")})
     private Set<Hobby> hobbies;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(name = "contactPlaces",
+    @JoinTable(name = "CONTACT_PLACES",
             joinColumns = {@JoinColumn(name= "CONTACT_ID")}
             , inverseJoinColumns = {@JoinColumn(name = "PLACE_ID")})
     private Set<Place> places;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(name = "listFriends",
+    @JoinTable(name = "LIST_FRIENDS",
             joinColumns = {@JoinColumn(name= "CONTACT_ID_ONE")}
             , inverseJoinColumns = {@JoinColumn(name = "CONTACT_ID_TWO")})
     private Set<Contact> friends;
@@ -61,8 +62,14 @@ public class Contact implements Serializable{
         this.firstName = firstName;
     }
 
+    public Contact(String firstName, String lastName, Date birthDate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+    }
 
     public Set<Contact> getContactsFriends() {
+        if (contactsFriends==null) contactsFriends = new HashSet<Contact>();
         return contactsFriends;
     }
 
@@ -71,6 +78,7 @@ public class Contact implements Serializable{
     }
 
     public Set<Contact> getFriends() {
+        if (friends==null) friends =  new HashSet<Contact>();
         return friends;
     }
     public void setFriends(Set<Contact> friends) {
@@ -78,12 +86,14 @@ public class Contact implements Serializable{
     }
 
     public Set<Place> getPlaces() {
+        if (places == null) places = new HashSet<Place>();
         return places;
     }
     public void setPlaces(Set<Place> places) {
         this.places = places;
     }
     public Set<Hobby> getHobbies() {
+        if (hobbies==null) hobbies= new HashSet<Hobby>();
         return hobbies;
     }
     public void setHobbies(Set<Hobby> hobbies) {

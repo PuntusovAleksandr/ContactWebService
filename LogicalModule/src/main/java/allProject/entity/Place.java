@@ -37,6 +37,18 @@ public class Place implements Serializable {
         this.title = title;
     }
 
+    public Place(String title, String description, double longitude, double latitude) {
+        this.title = title;
+        this.description = description;
+        this.longitude = longitude;
+        this.latitude = latitude;
+    }
+
+    public Place(String title, double longitude, double latitude) {
+        this.title = title;
+        this.longitude = longitude;
+        this.latitude = latitude;
+    }
 
     public Set<Contact> getContacts() {
         return contacts;
