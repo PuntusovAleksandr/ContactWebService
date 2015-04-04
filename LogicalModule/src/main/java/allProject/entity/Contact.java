@@ -4,7 +4,6 @@ package allProject.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Set;
 
 /**
  * Created by Aleksandr on 25.03.2015.
@@ -27,16 +26,16 @@ public class Contact implements Serializable{
     @Temporal(TemporalType.TIMESTAMP)
     private Date birthDate;
 
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name="contactHobbies", joinColumns={@JoinColumn(referencedColumnName = "ID")}
-            , inverseJoinColumns={@JoinColumn(referencedColumnName="ID")})
-    private Set<Hobby> hobbies;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "contactPlaces", joinColumns = {@JoinColumn(referencedColumnName = "ID")}
-            , inverseJoinColumns = {@JoinColumn(referencedColumnName = "ID")})
-    private Set<Place> places;
+//
+//    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JoinTable(name="contactHobbies", joinColumns={@JoinColumn(referencedColumnName = "ContactId")}
+//            , inverseJoinColumns={@JoinColumn(referencedColumnName="HobbyId")})
+//    private Set<Hobby> hobbies;
+//
+//    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JoinTable(name = "contactPlaces", joinColumns = {@JoinColumn(referencedColumnName = "ID")}
+//            , inverseJoinColumns = {@JoinColumn(referencedColumnName = "ID")})
+//    private Set<Place> places;
 
 
 
@@ -51,21 +50,21 @@ public class Contact implements Serializable{
     }
 
 
-    public Set<Place> getPlaces() {
-        return places;
-    }
-
-    public void setPlaces(Set<Place> places) {
-        this.places = places;
-    }
-
-    public Set<Hobby> getHobbies() {
-        return hobbies;
-    }
-
-    public void setHobbies(Set<Hobby> hobbies) {
-        this.hobbies = hobbies;
-    }
+//    public Set<Place> getPlaces() {
+//        return places;
+//    }
+//
+//    public void setPlaces(Set<Place> places) {
+//        this.places = places;
+//    }
+//
+//    public Set<Hobby> getHobbies() {
+//        return hobbies;
+//    }
+//
+//    public void setHobbies(Set<Hobby> hobbies) {
+//        this.hobbies = hobbies;
+//    }
 
     public long getId() {
         return id;

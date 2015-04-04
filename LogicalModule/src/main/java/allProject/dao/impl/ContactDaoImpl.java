@@ -21,7 +21,9 @@ public class ContactDaoImpl implements ContactDao{
     @Override
     @Transactional
     public void addContact(Contact contact) {
+        if (contact==null) throw new IllegalArgumentException("Contact must be valid");
         sessionFactory.getCurrentSession().saveOrUpdate(contact);
+
     }
 
     @Override
@@ -37,13 +39,14 @@ public class ContactDaoImpl implements ContactDao{
     @Override
     @Transactional
     public Contact getContact(long id) {
-//        return (Contact) sessionFactory.getCurrentSession().createQuery("from contact where contact.id = :id").uniqueResult();
-        return null;
+        Contact contact = (Contact) sessionFactory.getCurrentSession().get(Contact.class, id);
+        return contact;
     }
 
     @Override
     @Transactional
     public void deleteContact(Contact contact) {
+        if (contact==null) throw new IllegalArgumentException("Contact must be valid");
         sessionFactory.getCurrentSession().delete(contact);
     }
 }
