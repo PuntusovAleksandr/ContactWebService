@@ -11,4 +11,6 @@ import java.util.List;
 public interface MessageDao {
     void storeMessage(Message message);
     public List<Message> getConversation(Contact contact);
+
+    List<Message> getConversationToId(long id);
 }

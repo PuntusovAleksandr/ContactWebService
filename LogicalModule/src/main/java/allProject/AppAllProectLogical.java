@@ -6,10 +6,12 @@ import allProject.dao.MessageDao;
 import allProject.dao.PlaceDao;
 import allProject.entity.Contact;
 import allProject.entity.Hobby;
+import allProject.entity.Message;
 import allProject.service.ContactService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Aleksandr on 03.04.2015.
@@ -61,5 +63,21 @@ public class AppAllProectLogical {
         System.out.println("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
         System.out.println(contactService.getAllHobbies());
 
+        System.out.println("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
+        Contact aprAleks = new Contact("Aeks", "AAAAAAAAA", new Date(2000, 12, 31));
+        contactService.addContact(aprAleks);
+//        aprAleks.getMessages().add(new Message(1, "Hi Contact with Id= 1"));
+        contactService.storeMessage(new Message(aprAleks.getId(), "Hi  Aleks! "));
+        System.out.println(contactService.getContact(aprAleks.getId()));
+        Message message1 = new Message();
+        message1.setContent("Hi Contact with Id= 1");
+        message1.setContactId(1);
+        contactService.storeMessage(message1);
+        List<Message> messageList = (contactService.getContact(aprAleks.getId()).getMessages());
+
+//        System.out.println(contactService.getConversation(aprAleks));
+        System.out.println("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+//        System.out.println(contactService.getConversation(aprAleks));
+        System.out.println(contactService.getConversationToId(1));
     }
 }

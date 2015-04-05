@@ -3,9 +3,7 @@ package allProject.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Aleksandr on 25.03.2015.
@@ -51,7 +49,12 @@ public class Contact implements Serializable{
     private Set<Contact> contactsFriends;
 
 
-
+    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "CONTACT_ID")
+    @JoinTable(name = "CONTACT_MESSAGE",
+            joinColumns = {@JoinColumn(name= "CONTACT_ID")}
+            , inverseJoinColumns = {@JoinColumn(name = "MESSAGE_ID")})
+    private List<Message> messages;
 
 
 
@@ -66,6 +69,15 @@ public class Contact implements Serializable{
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
+    }
+
+    public List<Message> getMessages() {
+        if (messages == null) messages = new ArrayList<Message>();
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
     }
 
     public Set<Contact> getContactsFriends() {

@@ -27,12 +27,16 @@ public class MessageDaoImpl implements MessageDao {
 
     @Override
     @Transactional
-    @SuppressWarnings("unchecked")
     public List<Message> getConversation(Contact contact) {
-        long id = contact.getId();
+        return getConversationToId(contact.getId());
+    }
+
+    @Override
+    @Transactional
+    @SuppressWarnings("unchecked")
+    public List<Message> getConversationToId(long id) {
         String zzz = "from Message m where  m.contactId = :"+id;
-//        List<Message> messageList = sessionFactory.getCurrentSession().createQuery(zzz).list();
-        List<Message> messageList = sessionFactory.getCurrentSession().createQuery(" from Message").list();
+        List<Message> messageList = sessionFactory.getCurrentSession().createQuery(zzz).list();
         if  ( messageList==null)return null;
         return messageList;
     }

@@ -189,4 +189,10 @@ public class ContactServiceImpl implements ContactService {
     public List<Message> getConversation(Contact contact) {
         return messageDao.getConversation(contact);
     }
+
+    @Override
+    @Transactional
+    public List<Message> getConversationToId(long id) {
+        return messageDao.getConversationToId(id);
+    }
 }
