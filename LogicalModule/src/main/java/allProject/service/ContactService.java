@@ -63,7 +63,7 @@ public interface ContactService {
 
     //MessageDao
     void storeMessage(Message message);
-    public List<Message> getConversation(Contact contact);
+    public List<Message> getConversation(Contact fromContact, Contact toContact);
     public List<Message> getConversationToId(long id);
 
 

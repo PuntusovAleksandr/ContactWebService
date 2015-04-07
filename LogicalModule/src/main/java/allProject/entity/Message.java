@@ -16,8 +16,11 @@ public class Message implements Serializable {
     @Column(name = "ID")
     private long id;
 
-    @Column(name = "contact_id")
-    private long contactId;
+    @Column(name = "FROM_ID")
+    private long fromId;
+
+    @Column(name = "TO_ID")
+    private long toId;
 
     @Column(name = "content")
     private String content;
@@ -26,14 +29,11 @@ public class Message implements Serializable {
     private Date date;
 
 
-
-
-
-
     public Message() {    }
 
-    public Message(long contactId, String content) {
-        this.contactId = contactId;
+    public Message(long fromId, long toId, String content) {
+        this.fromId = fromId;
+        this.toId = toId;
         this.content = content;
     }
 
@@ -45,12 +45,20 @@ public class Message implements Serializable {
         this.id = id;
     }
 
-    public long getContactId() {
-        return contactId;
+    public long getFromId() {
+        return fromId;
     }
 
-    public void setContactId(long contactId) {
-        this.contactId = contactId;
+    public void setFromId(long fromId) {
+        this.fromId = fromId;
+    }
+
+    public long getToId() {
+        return toId;
+    }
+
+    public void setToId(long toId) {
+        this.toId = toId;
     }
 
     public String getContent() {
@@ -76,9 +84,10 @@ public class Message implements Serializable {
 
         Message message = (Message) o;
 
-        if (contactId != message.contactId) return false;
+        if (fromId != message.fromId) return false;
         if (id != message.id) return false;
-        if (content != null ? !content.equals(message.content) : message.content != null) return false;
+        if (toId != message.toId) return false;
+        if (!content.equals(message.content)) return false;
         if (date != null ? !date.equals(message.date) : message.date != null) return false;
 
         return true;
@@ -87,8 +96,9 @@ public class Message implements Serializable {
     @Override
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + (int) (contactId ^ (contactId >>> 32));
-        result = 31 * result + (content != null ? content.hashCode() : 0);
+        result = 31 * result + (int) (fromId ^ (fromId >>> 32));
+        result = 31 * result + (int) (toId ^ (toId >>> 32));
+        result = 31 * result + content.hashCode();
         result = 31 * result + (date != null ? date.hashCode() : 0);
         return result;
     }
@@ -97,9 +107,10 @@ public class Message implements Serializable {
     public String toString() {
         return "Message{" +
                 "id=" + id +
-                ", contactId=" + contactId +
+                ", fromId=" + fromId +
+                ", toId=" + toId +
                 ", content='" + content + '\'' +
                 ", date=" + date +
-                '}'+"\n";
+                '}';
     }
 }

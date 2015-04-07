@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.management.Query;
 import java.util.List;
 
 /**
@@ -27,16 +28,19 @@ public class MessageDaoImpl implements MessageDao {
 
     @Override
     @Transactional
-    public List<Message> getConversation(Contact contact) {
-        return getConversationToId(contact.getId());
+    public List<Message> getConversation(Contact fromContact, Contact toContact) {
+        long fromId = fromContact.getId();
+        long toId = toContact.getId();
+        String stringQuery = "from Message m where m.fromId = :fromId and m.toId = :toId";
+        return sessionFactory.getCurrentSession().createQuery(stringQuery).setParameter("fromId", fromId).setParameter("toId", toId).list();
     }
 
     @Override
     @Transactional
     @SuppressWarnings("unchecked")
     public List<Message> getConversationToId(long id) {
-        String zzz = "from Message m where  m.contactId = :"+id;
-        List<Message> messageList = sessionFactory.getCurrentSession().createQuery(zzz).list();
+        String zzz = "from Message m where  m.fromId = :id";
+        List<Message> messageList = sessionFactory.getCurrentSession().createQuery(zzz).setParameter("id", id).list();
         if  ( messageList==null)return null;
         return messageList;
     }

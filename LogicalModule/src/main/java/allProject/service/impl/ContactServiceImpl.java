@@ -186,8 +186,8 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     @Transactional
-    public List<Message> getConversation(Contact contact) {
-        return messageDao.getConversation(contact);
+    public List<Message> getConversation(Contact fromContact, Contact toContact) {
+        return messageDao.getConversation(fromContact, toContact);
     }
 
     @Override

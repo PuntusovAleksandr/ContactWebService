@@ -66,18 +66,18 @@ public class AppAllProectLogical {
         System.out.println("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
         Contact aprAleks = new Contact("Aeks", "AAAAAAAAA", new Date(2000, 12, 31));
         contactService.addContact(aprAleks);
-//        aprAleks.getMessages().add(new Message(1, "Hi Contact with Id= 1"));
-        contactService.storeMessage(new Message(aprAleks.getId(), "Hi  Aleks! "));
+        aprAleks.getMessages().add(new Message(1, 2,  "Hi Contact with Id= 1"));
+        contactService.storeMessage(new Message(aprAleks.getId(), aaaa.getId(), "Hi  Aleks! "));
         System.out.println(contactService.getContact(aprAleks.getId()));
         Message message1 = new Message();
         message1.setContent("Hi Contact with Id= 1");
-        message1.setContactId(1);
+
         contactService.storeMessage(message1);
         List<Message> messageList = (contactService.getContact(aprAleks.getId()).getMessages());
 
 //        System.out.println(contactService.getConversation(aprAleks));
         System.out.println("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
-//        System.out.println(contactService.getConversation(aprAleks));
-        System.out.println(contactService.getConversationToId(1));
+        System.out.println(contactService.getConversation(aprAleks, aaaa));
+        System.out.println(contactService.getConversationToId(aprAleks.getId()));
     }
 }

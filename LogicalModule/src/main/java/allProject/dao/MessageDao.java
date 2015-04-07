@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface MessageDao {
     void storeMessage(Message message);
-    public List<Message> getConversation(Contact contact);
+    public List<Message> getConversation(Contact fromContact, Contact toContact);
 
     List<Message> getConversationToId(long id);
 }

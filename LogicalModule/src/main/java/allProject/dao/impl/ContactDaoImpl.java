@@ -82,8 +82,9 @@ public class ContactDaoImpl implements ContactDao{
     @Override
     @Transactional
     public List<Contact> getAllFriendsFromContact(Contact contact) {
-        String stringQuery = " from LIST_FRIENDS where CONTACT_ID_ONE="+contact.getId();
-        return sessionFactory.getCurrentSession().createQuery(stringQuery).list();
+        long id = contact.getId();
+        String stringQuery = " from LIST_FRIENDS where CONTACT_ID_ONE=:id";
+        return sessionFactory.getCurrentSession().createQuery(stringQuery).setParameter("id", id).list();
     }
 
 
