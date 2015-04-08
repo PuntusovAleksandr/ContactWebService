@@ -24,6 +24,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="LogicalModule" />
+        <module name="ModuleWeb" />
       </profile>
     </annotationProcessing>
   </component>
