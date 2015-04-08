@@ -25,6 +25,7 @@
         <processorPath useClasspath="true" />
         <module name="LogicalModule" />
         <module name="ModuleWeb" />
+        <module name="ProbaCreateWeb" />
       </profile>
     </annotationProcessing>
   </component>

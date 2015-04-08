@@ -11,7 +11,7 @@
 
     <artifactId>ModuleWeb</artifactId>
     <packaging>war</packaging>
-    <name>ContactServiceWeb</name>
+    <name>ModuleWeb</name>
     <url>http://maven.apache.org</url>
 
 
