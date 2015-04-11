@@ -13,4 +13,9 @@ public interface MessageDao {
     public List<Message> getConversation(Contact fromContact, Contact toContact);
 
     List<Message> getConversationToId(long id);
+
+
+    List<String> getAllMessages();
+
+    void createNewMessageFromTo(String s, long id, long id1);
 }

@@ -31,7 +31,7 @@ public class MessageDaoImpl implements MessageDao {
     public List<Message> getConversation(Contact fromContact, Contact toContact) {
         long fromId = fromContact.getId();
         long toId = toContact.getId();
-        String stringQuery = "from Message m where m.fromId = :fromId and m.toId = :toId";
+        String stringQuery = "from Message m where (m.fromId = :fromId and m.toId = :toId) or (m.toId = :toId and m.fromId = :fromId)";
         return sessionFactory.getCurrentSession().createQuery(stringQuery).setParameter("fromId", fromId).setParameter("toId", toId).list();
     }
 
@@ -43,6 +43,22 @@ public class MessageDaoImpl implements MessageDao {
         List<Message> messageList = sessionFactory.getCurrentSession().createQuery(zzz).setParameter("id", id).list();
         if  ( messageList==null)return null;
         return messageList;
+    }
+
+    @Override
+    @Transactional
+    public List<String> getAllMessages() {
+        return sessionFactory.getCurrentSession().createQuery("from Message").list();
+    }
+
+    @Override
+    @Transactional
+    public void createNewMessageFromTo(String s, long id, long id1) {
+        Message message = new Message();
+        message.setContent(s);;
+        message.setFromId(id);
+        message.setToId(id1);
+        sessionFactory.getCurrentSession().saveOrUpdate(message );
     }
 
 

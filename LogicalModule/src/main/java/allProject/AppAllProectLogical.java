@@ -79,5 +79,22 @@ public class AppAllProectLogical {
         System.out.println("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
         System.out.println(contactService.getConversation(aprAleks, aaaa));
         System.out.println(contactService.getConversationToId(aprAleks.getId()));
+        System.out.println("_________________________________________________________________");
+
+        aprAleks.getMessages().add(new Message(aprAleks.getId(), aaaa.getId(), "Hi anyone"));
+        aaaa.getMessages().add(new Message(aaaa.getId(), aprAleks.getId(), "Hi Aleks"));
+        System.out.println(contactService.getConversationToId(aprAleks.getId()));
+
+        System.out.println(contactService.getAllMessage());
+        System.out.println(contactService.getAllContact());
+        System.out.println("=======================================================================");
+        contactService.createNewMessageFromTo(" Привет незнакомец ", aleks.getId(), aaaa.getId());
+        contactService.createNewMessageFromTo(" О, здорово! ", aaaa.getId(), aprAleks.getId());
+        System.out.println(contactService.getAllMessage());
+        System.out.println(contactService.getConversationToId(aaaa.getId()));
+
+
     }
+
+
 }

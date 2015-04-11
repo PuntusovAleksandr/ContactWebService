@@ -195,4 +195,14 @@ public class ContactServiceImpl implements ContactService {
     public List<Message> getConversationToId(long id) {
         return messageDao.getConversationToId(id);
     }
+
+    @Override
+    public List<String> getAllMessage() {
+        return messageDao.getAllMessages();
+    }
+
+    @Override
+    public void createNewMessageFromTo(String s, long id, long id1) {
+        messageDao.createNewMessageFromTo( s, id, id1);
+    }
 }

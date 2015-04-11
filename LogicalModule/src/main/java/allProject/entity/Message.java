@@ -111,6 +111,6 @@ public class Message implements Serializable {
                 ", toId=" + toId +
                 ", content='" + content + '\'' +
                 ", date=" + date +
-                '}';
+                '}'+"\n";
     }
 }
