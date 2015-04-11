@@ -9,9 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>AleksandrP</groupId>
-    <artifactId>Logical-Module</artifactId>
-    <version>1.0</version>
+    <artifactId>WebModdule</artifactId>
 
 
 </project>
