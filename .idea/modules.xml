@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ContactWebService.iml" filepath="$PROJECT_DIR$/ContactWebService.iml" />
       <module fileurl="file://$PROJECT_DIR$/LogicalModule/LogicalModule.iml" filepath="$PROJECT_DIR$/LogicalModule/LogicalModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebModule/WebModule.iml" filepath="$PROJECT_DIR$/WebModule/WebModule.iml" />
     </modules>
   </component>
 </project>
