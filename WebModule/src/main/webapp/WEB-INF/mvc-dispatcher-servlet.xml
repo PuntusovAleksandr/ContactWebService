@@ -18,6 +18,7 @@
         http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
 
     <context:component-scan base-package="allProject" />
+    <context:component-scan base-package="com.sav"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
@@ -34,7 +35,7 @@
 
     <tx:annotation-driven/>
 
-    <context:component-scan base-package="com.sav"/>
+    <!--<context:component-scan base-package="com.sav"/>-->
 
     <jdbc:embedded-database id="dataSource" type="H2">
         <jdbc:script location="classpath:/schema.sql"/>
