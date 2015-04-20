@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.management.Query;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,7 +31,7 @@ public class MessageDaoImpl implements MessageDao {
     public List<Message> getConversation(Contact fromContact, Contact toContact) {
         long fromId = fromContact.getId();
         long toId = toContact.getId();
-        String stringQuery = "from Message m where (m.fromId = :fromId and m.toId = :toId) or (m.toId = :toId and m.fromId = :fromId)";
+        String stringQuery = "from Message m where (m.fromId = :fromId and m.toId = :toId) or (m.toId = :toId and m.fromId = :fromId) order by m.date";
         return sessionFactory.getCurrentSession().createQuery(stringQuery).setParameter("fromId", fromId).setParameter("toId", toId).list();
     }
 
@@ -58,6 +58,7 @@ public class MessageDaoImpl implements MessageDao {
         message.setContent(s);;
         message.setFromId(id);
         message.setToId(id1);
+        message.setDate(new Date());
         sessionFactory.getCurrentSession().saveOrUpdate(message );
     }
 
