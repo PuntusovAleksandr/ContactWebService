@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="ru">
+
 <!--<![endif]-->
+
 <head>
   <meta charset="utf-8" />
   <title>Contact Web Service</title>
@@ -9,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="favicon.png" />
   <link rel="stylesheet" href="resources/libs/bootstrap/bootstrap-grid-3.3.1.min.css" />
-  <link rel="stylesheet" href="resources/libs/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="resources/libs/bootstrap/bootstrap.css" />
   <link rel="stylesheet" href="resources/libs/font-awesome-4.2.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="resources/libs/fancybox/jquery.fancybox.css" />
   <link rel="stylesheet" href="resources/libs/owl-carousel/owl.carousel.css" />
@@ -18,6 +20,8 @@
   <link rel="stylesheet" href="resources/css/main.css" />
   <link rel="stylesheet" href="resources/css/media.css" />
 </head>
+
+
 <body>
 
 <div class="container-fluid">
@@ -69,7 +73,7 @@
       <div class="span9" id="container_left_span6">
         <div class="image_botton">
           <div class="image">
-            <a href="http://skillsup.ua/" class="skillsup">
+            <a href="http://skillsup.ua/" target="_blank" class="skillsup">
               <img src="resources/img/21.JPG" align="center" class="img-polaroid">
             </a>
           </div>
@@ -84,13 +88,13 @@
               <p></p>
               <ul class="dropdown-menu"  >
                 <li class="select">
-                  <a href="#" tabindex="-1">Create contact</a>
+                  <a href="#create_contact" tabindex="-1" data-toggle="modal">Create contact</a>
                 </li>
                 <li class="select">
-                  <a href="#" tabindex="-1">Delete contact</a>
+                  <a href="#delete_contact" tabindex="-1" data-toggle="modal">Delete contact</a>
                 </li>
                 <li class="select">
-                  <a href="#" tabindex="-1">All contacts</a>
+                  <a href="#get_all_contacts" target="_blank" tabindex="-1" data-toggle="modal">All contacts</a>
                 </li>
               </ul>
             </li>
@@ -99,13 +103,13 @@
               <p></p>
               <ul class="dropdown-menu"  >
                 <li class="select">
-                  <a href="#" tabindex="-1">Add hobby</a>
+                  <a href="#add_hobby" target="_blank" tabindex="-1" data-toggle="modal">Add hobby</a>
                 </li>
                 <li class="select">
-                  <a href="#" tabindex="-1">Delete hobby</a>
+                  <a href="#ddelete_hobby" target="_blank" tabindex="-1" data-toggle="modal">Delete hobby</a>
                 </li>
                 <li class="select">
-                  <a href="#" tabindex="-1">All hobbyes</a>
+                  <a href="#get_all_hobbies" target="_blank" tabindex="-1" data-toggle="modal">All hobbies</a>
                 </li>
               </ul>
             </li>
@@ -114,13 +118,13 @@
               <p></p>
               <ul class="dropdown-menu"  >
                 <li class="select">
-                  <a href="#" tabindex="-1">Add place</a>
+                  <a href="#add_place" target="_blank" tabindex="-1" data-toggle="modal">Add place</a>
                 </li>
                 <li class="select">
-                  <a href="#" tabindex="-1">Delete place</a>
+                  <a href="#delete_place" target="_blank" tabindex="-1" data-toggle="modal">Delete place</a>
                 </li>
                 <li class="select">
-                  <a href="#" tabindex="-1">All places</a>
+                  <a href="#get_all__place" target="_blank" tabindex="-1" data-toggle="modal">All places</a>
                 </li>
               </ul>
             </li>
@@ -129,13 +133,13 @@
               <p></p>
               <ul class="dropdown-menu"  >
                 <li class="select">
-                  <a href="#" tabindex="-1">Create message</a>
+                  <a href="#add_message" target="_blank" tabindex="-1" data-toggle="modal">Create message</a>
                 </li>
                 <li class="select">
-                  <a href="#" tabindex="-1">Delete message</a>
+                  <a href="#delete_message" target="_blank" tabindex="-1" data-toggle="modal">Delete message</a>
                 </li>
                 <li class="select">
-                  <a href="#" tabindex="-1">All messages</a>
+                  <a href="#get_all_message" target="_blank" tabindex="-1" data-toggle="modal">All messages</a>
                 </li>
               </ul>
             </li>
@@ -143,8 +147,200 @@
         </div>
       </div>
     </div>
-
   </div>
+
+
+  <div class="modal  fade" id="create_contact" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button class="close" type="button" data-dismiss="modal">x</button>
+      <h3>Create new contact</h3>
+    </div>
+    <div class="modal_body">
+
+      <input class="modal_body_input" type="text" name="name" placeholder="Name..." required />
+      <input class="modal_body_input" type="text" name="last_name" placeholder="Last name..." required />
+      <input class="modal_body_input" type="text" name="last_name" placeholder="Birth  yyyy-mm-dd" required >
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Cancel</button>
+      <button class="btn btn-primary">Save</button>
+    </div>
+  </div>
+
+  <div class="modal  fade" id="delete_contact" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button class="close" type="button" data-dismiss="modal">x</button>
+      <h3>Delete new contact</h3>
+    </div>
+    <div class="modal_body">
+
+      <input class="modal_body_input" type="text" name="delete_contact_from_list"  placeholder="Name contact..." required />
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Cancel</button>
+      <button class="btn btn-primary">Save</button>
+    </div>
+  </div>
+
+  <div class="modal  fade" id="get_all_contacts" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button class="close" type="button" data-dismiss="modal">x</button>
+      <h3>All contacts</h3>
+    </div>
+    <div class="modal_body">
+
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Ok</button>
+    </div>
+  </div>
+
+  <div class="modal  fade" id="add_hobby" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button class="close" type="button" data-dismiss="modal">x</button>
+      <h3>Add hobby</h3>
+    </div>
+    <div class="modal_body">
+
+      <input class="modal_body_input" type="text" name="title_hobby" placeholder="Title..." required />
+      <input class="modal_body_input" type="text" name="description_hobby" placeholder="Description..." required />
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Cancel</button>
+      <button class="btn btn-primary">Save</button>
+    </div>
+  </div>
+
+  <div class="modal  fade" id="ddelete_hobby" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button class="close" type="button" data-dismiss="modal">x</button>
+      <h3>Delete hobby</h3>
+    </div>
+    <div class="modal_body">
+
+      <input class="modal_body_input" type="text" name="delete_hobby_from_list" placeholder="Name hobby..." required />
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Cancel</button>
+      <button class="btn btn-primary">Save</button>
+    </div>
+  </div>
+
+  <div class="modal  fade" id="get_all_hobbies" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button class="close" type="button" data-dismiss="modal">x</button>
+      <h3>All hobbies</h3>
+    </div>
+    <div class="modal_body">
+
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Ok</button>
+    </div>
+  </div>
+
+  <div class="modal  fade" id="add_place" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button class="close" type="button" data-dismiss="modal">x</button>
+      <h3>Create new place</h3>
+    </div>
+    <div class="modal_body">
+
+      <input class="modal_body_input" type="text" name="place" placeholder="Title..." required />
+      <input class="modal_body_input" type="text" name="description_place" placeholder="Description..." required />
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Cancel</button>
+      <button class="btn btn-primary">Save</button>
+    </div>
+  </div>
+
+  <div class="modal  fade" id="delete_place" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button class="close" type="button" data-dismiss="modal">x</button>
+      <h3>Delete place</h3>
+    </div>
+    <div class="modal_body">
+
+      <input class="modal_body_input" type="text" name="delete_place_from_list" placeholder="Place title..." required />
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Cancel</button>
+      <button class="btn btn-primary">Save</button>
+    </div>
+  </div>
+
+  <div class="modal  fade" id="get_all__place" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button class="close" type="button" data-dismiss="modal">x</button>
+      <h3>All places</h3>
+    </div>
+    <div class="modal_body">
+
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Ok</button>
+    </div>
+  </div>
+
+  <div class="modal  fade" id="add_message" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button class="close" type="button" data-dismiss="modal">x</button>
+      <h3>Add new message</h3>
+    </div>
+    <div class="modal_body">
+
+      <input class="modal_body_input" type="text" name="contact_from" placeholder="Contact from..." required />
+      <input class="modal_body_input" type="text" name="contact_to" placeholder="Contact to..." required />
+      <input class="modal_body_input" type="text" name="message" placeholder="Message..." required />
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Cancel</button>
+      <button class="btn btn-primary">Save</button>
+    </div>
+  </div>
+
+  <div class="modal  fade" id="delete_message" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button class="close" type="button" data-dismiss="modal">x</button>
+      <h3>Delete message</h3>
+    </div>
+    <div class="modal_body">
+
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Cancel</button>
+      <button class="btn btn-primary">Save</button>
+    </div>
+  </div>
+
+  <div class="modal  fade" id="get_all_message" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button class="close" type="button" data-dismiss="modal">x</button>
+      <h3>All messages</h3>
+    </div>
+    <div class="modal_body">
+
+      <input class="modal_body_input" type="text" name="message_contact" placeholder="Name contact..." required />
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Ok</button>
+    </div>
+  </div>
+
+
 
   <div class="row-fluid" id="footer">
     <div class="span12" id="span12_footer">
@@ -155,6 +351,7 @@
   </div>
 
 </div>
+
 
 
 <!--[if lt IE 9]>

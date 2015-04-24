@@ -1,6 +1,10 @@
 body {
 	background: url(/resources/img/44.gif);
 }
+.contact_page{
+	color: white;
+}
+
 
 #span12_font{
 	text-transform: uppercase;
@@ -18,12 +22,27 @@ body {
 	position: relative;
 }
 
-#slide_img{
+.slide_img{
 	cursor: pointer;
 }
 
 .button_slide{
 	cursor: pointer;
+}
+
+
+.modal_body_input[type="text"] {
+
+	width: 70%;
+	display: block;
+	line-height: 24px;
+	margin: 0px auto 12px;
+	border: 3px solid #999;
+	/*font-family: inherit;*/
+	font-size: inherit;
+	font: inherit;
+	height: 30px;
+
 }
 
 .next_button,
@@ -64,13 +83,13 @@ body {
 	font-weight: bold;
 }
 .img-circle {
-    border-radius: 50%;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    vertical-align: auto;
-    padding: 15px;
+	border-radius: 50%;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	vertical-align: auto;
+	padding: 15px;
 
 }
 
@@ -140,11 +159,11 @@ body {
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid {
-	
+
 }
 body input:required:valid,
 body textarea:required:valid {
-	
+
 }
 body {
 	font-family: "RobotoRegular", sans-serif;
