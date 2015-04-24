@@ -29,6 +29,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ContactWebService" target="1.5" />
+      <module name="LogicalModule" target="1.5" />
       <module name="WebModule" target="1.8" />
     </bytecodeTargetLevel>
   </component>

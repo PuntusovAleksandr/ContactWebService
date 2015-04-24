@@ -1,0 +1,155 @@
+body {
+	background: url(/resources/img/44.gif);
+}
+
+#span12_font{
+	text-transform: uppercase;
+	text-align: center;
+	font-style: normal;
+}
+
+.style_model{
+	font-size: 20px;
+	color: green;
+	text-transform: uppercase;
+}
+
+.sider_container{
+	position: relative;
+}
+
+#slide_img{
+	cursor: pointer;
+}
+
+.button_slide{
+	cursor: pointer;
+}
+
+.next_button,
+.pref_button{
+	color: #FF0303;
+	font-size: 45px;
+	position: absolute;
+	z-index: 10;
+	cursor: pointer;
+	top: 30%;
+	background-color: rgba(255,255,255,.5);
+	padding: 0 10px;
+	border-radius: 5px;
+}
+
+.next_button{
+	right: 20px;
+}
+
+.pref_button{
+	left: 20px;
+}
+
+.container-fluid{
+	background-color: #B5E711;
+	margin: 50px;
+}
+
+#header{
+	background-color: #20E160;
+}
+
+#header{
+	font-size: 30px;
+	padding: 15px;
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+}
+.img-circle {
+    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    vertical-align: auto;
+    padding: 15px;
+
+}
+
+.img-polaroid{
+	margin-top: 143px;
+}
+
+#container_right_span6{
+	background-color: #fff111;
+}
+
+.dropdown-menu{
+	display: block;
+	position: static;
+	margin-bottom: 15px;
+	*width: 30%;
+	background-color: grey;
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+	width: 94%;
+
+}
+
+.button_check{
+	color: #595959;
+	text-transform: uppercase;
+
+}
+
+#span12_footer{
+	background-color: #133;
+}
+
+.font_footer{
+	color: blue;
+}
+
+.autor_name {
+	font-size: 12px;
+	text-align: center;
+	padding: 2px;
+}
+
+.sidebar{
+	cursor: pointer;
+	margin: 10px;
+	padding:  5px;
+}
+
+*::-webkit-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-ms-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	
+}
+body input:required:valid,
+body textarea:required:valid {
+	
+}
+body {
+	font-family: "RobotoRegular", sans-serif;
+	font-size: 16px;
+}
+
+
+
