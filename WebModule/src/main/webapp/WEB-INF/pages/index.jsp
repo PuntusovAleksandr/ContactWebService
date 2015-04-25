@@ -136,9 +136,6 @@
                   <a href="#add_message" target="_blank" tabindex="-1" data-toggle="modal">Create message</a>
                 </li>
                 <li class="select">
-                  <a href="#delete_message" target="_blank" tabindex="-1" data-toggle="modal">Delete message</a>
-                </li>
-                <li class="select">
                   <a href="#get_all_message" target="_blank" tabindex="-1" data-toggle="modal">All messages</a>
                 </li>
               </ul>
@@ -149,18 +146,16 @@
     </div>
   </div>
 
-
+  <%-- ========================================= --%>
   <div class="modal  fade" id="create_contact" tabindex="-1" role="dialog">
     <div class="modal-header">
       <button class="close" type="button" data-dismiss="modal">x</button>
       <h3>Create new contact</h3>
     </div>
     <div class="modal_body">
-
       <input class="modal_body_input" type="text" name="name" placeholder="Name..." required />
       <input class="modal_body_input" type="text" name="last_name" placeholder="Last name..." required />
-      <input class="modal_body_input" type="text" name="last_name" placeholder="Birth  yyyy-mm-dd" required >
-
+      <input class="modal_body_input" type="text" name="birth_day" placeholder="Birth  yyyy-mm-dd" required >
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
@@ -174,9 +169,7 @@
       <h3>Delete new contact</h3>
     </div>
     <div class="modal_body">
-
       <input class="modal_body_input" type="text" name="delete_contact_from_list"  placeholder="Name contact..." required />
-
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
@@ -190,24 +183,50 @@
       <h3>All contacts</h3>
     </div>
     <div class="modal_body">
-
-
+      <table id="t_contact" class="table my_table table-condensed table-hover table-striped table-bordered table-bordered">
+        <thead>
+        <tr>
+          <th>№ id</th>
+          <th>Name</th>
+          <th>Last name</th>
+          <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>dff</td>
+          <td>erqg</td>
+          <td>erq</td>
+          <td>erqv</td>
+        </tr>
+        <tr>
+          <td>ve</td>
+          <td>v</td>
+          <td></td>
+          <td>qefb</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>qerb</td>
+          <td></td>
+          <td>qbv</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Ok</button>
     </div>
   </div>
-
+<%--++++++++++++++++++++++++++++++++++--%>
   <div class="modal  fade" id="add_hobby" tabindex="-1" role="dialog">
     <div class="modal-header">
       <button class="close" type="button" data-dismiss="modal">x</button>
       <h3>Add hobby</h3>
     </div>
     <div class="modal_body">
-
       <input class="modal_body_input" type="text" name="title_hobby" placeholder="Title..." required />
       <input class="modal_body_input" type="text" name="description_hobby" placeholder="Description..." required />
-
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
@@ -221,9 +240,7 @@
       <h3>Delete hobby</h3>
     </div>
     <div class="modal_body">
-
       <input class="modal_body_input" type="text" name="delete_hobby_from_list" placeholder="Name hobby..." required />
-
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
@@ -237,24 +254,48 @@
       <h3>All hobbies</h3>
     </div>
     <div class="modal_body">
-
-
+      <table id="t_hobby" class="table my_table table-condensed table-hover table-striped table-bordered table-bordered">
+        <thead>
+        <tr>
+          <th>№ id</th>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>dff</td>
+          <td>erqg</td>
+          <td>erq</td>
+        </tr>
+        <tr>
+          <td>ve</td>
+          <td>v</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>qerb</td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Ok</button>
     </div>
   </div>
-
+  <%--++++++++++++++++++++++++++++++++++--%>
   <div class="modal  fade" id="add_place" tabindex="-1" role="dialog">
     <div class="modal-header">
       <button class="close" type="button" data-dismiss="modal">x</button>
       <h3>Create new place</h3>
     </div>
     <div class="modal_body">
-
       <input class="modal_body_input" type="text" name="place" placeholder="Title..." required />
       <input class="modal_body_input" type="text" name="description_place" placeholder="Description..." required />
-
+      <input class="modal_body_input" type="text" name="longitude_place" placeholder="Longitude..." required />
+      <input class="modal_body_input" type="text" name="latitude_place" placeholder="Latitude..." required />
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
@@ -268,9 +309,7 @@
       <h3>Delete place</h3>
     </div>
     <div class="modal_body">
-
       <input class="modal_body_input" type="text" name="delete_place_from_list" placeholder="Place title..." required />
-
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
@@ -284,40 +323,55 @@
       <h3>All places</h3>
     </div>
     <div class="modal_body">
-
-
+      <table id="t_place" class="table my_table table-condensed table-hover table-striped table-bordered table-bordered">
+        <thead>
+        <tr>
+          <th>№ id</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Longitude</th>
+          <th>Latitude</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>dff</td>
+          <td>erqg</td>
+          <td>erq</td>
+          <td>erqv</td>
+          <td>erqv</td>
+        </tr>
+        <tr>
+          <td>ve</td>
+          <td>v</td>
+          <td></td>
+          <td>qefb</td>
+          <td>qefb</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>qerb</td>
+          <td></td>
+          <td>qbv</td>
+          <td>qbv</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Ok</button>
     </div>
   </div>
-
+  <%--++++++++++++++++++++++++++++++++++--%>
   <div class="modal  fade" id="add_message" tabindex="-1" role="dialog">
     <div class="modal-header">
       <button class="close" type="button" data-dismiss="modal">x</button>
       <h3>Add new message</h3>
     </div>
     <div class="modal_body">
-
       <input class="modal_body_input" type="text" name="contact_from" placeholder="Contact from..." required />
       <input class="modal_body_input" type="text" name="contact_to" placeholder="Contact to..." required />
       <input class="modal_body_input" type="text" name="message" placeholder="Message..." required />
-
-    </div>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal">Cancel</button>
-      <button class="btn btn-primary">Save</button>
-    </div>
-  </div>
-
-  <div class="modal  fade" id="delete_message" tabindex="-1" role="dialog">
-    <div class="modal-header">
-      <button class="close" type="button" data-dismiss="modal">x</button>
-      <h3>Delete message</h3>
-    </div>
-    <div class="modal_body">
-
-
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
@@ -331,15 +385,13 @@
       <h3>All messages</h3>
     </div>
     <div class="modal_body">
-
       <input class="modal_body_input" type="text" name="message_contact" placeholder="Name contact..." required />
-
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Ok</button>
     </div>
   </div>
-
+  <%--++++++++++++++++++++++++++++++++++--%>
 
 
   <div class="row-fluid" id="footer">
