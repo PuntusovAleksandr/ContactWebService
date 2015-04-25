@@ -1,12 +1,15 @@
 package com.aleksandr.controller;
 
 
+import allProject.entity.Hobby;
 import allProject.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Set;
 
 @Controller
 public class ControllerMain {
@@ -24,10 +27,10 @@ public class ControllerMain {
     @RequestMapping(value = "/#get_all_hobbies", method = RequestMethod.GET)
     public ModelAndView getAllHobbies(){
         ModelAndView modelAndView = new ModelAndView();
-//        Set<Hobby> hobbies = contactService.getAllHobbies();
-//
-//        modelAndView.addObject("hobbies", hobbies);
-//        modelAndView.setViewName("contacts");
+        Set<Hobby> hobbies = contactService.getAllHobbies();
+        modelAndView.addObject("hobbies", hobbies);
+        modelAndView.setViewName("index");
+        System.out.println(hobbies.size());
         return modelAndView;
     }
 }
