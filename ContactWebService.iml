@@ -20,5 +20,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Spring-4.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Spring-4.1.6.RELEASE (2)" level="project" />
   </component>
 </module>

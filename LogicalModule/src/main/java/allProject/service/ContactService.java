@@ -41,9 +41,10 @@ public interface ContactService {
 
     @Transactional
     void createHobby(String title);
-
+    @Transactional
     Set<Hobby> getAllHobbies();
     void deleteHobby(Hobby hobby);
+
     @Transactional
     Set<Contact> getAllContactsWithHobby(Hobby hobby);
 

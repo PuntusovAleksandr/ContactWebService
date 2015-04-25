@@ -15,5 +15,7 @@
     <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/entity/Place.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LogicalModule/src/main/java/allProject/service/ContactService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LogicalModule/src/main/resources/log4j.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebModule/src/main/java/com/aleksandr/ModelWeb/Contact.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebModule/src/main/java/com/aleksandr/ModelWeb/Hobby.java" charset="UTF-8" />
   </component>
 </project>

@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="ModuleWeb:war">
-    <output-path>$PROJECT_DIR$/ModuleWeb/target</output-path>
-    <root id="archive" name="mitta-webapp.war">
-      <element id="artifact" artifact-name="ModuleWeb:war exploded" />
-    </root>
-  </artifact>
-</component>
