@@ -1,43 +1,26 @@
 package com.aleksandr.ModelWeb;
 
-import allProject.entity.Contact;
-
-import java.util.Set;
-
 /**
- * Created by Aleksandr on 25.03.2015.
+ * Created by Aleksandr on 26.04.2015.
  */
-
-public class HobbyWeb {
-
+public class PlaceWeb {
     private long id;
 
     private String title;
 
     private String description;
 
-    private Set<allProject.entity.Contact> contacts;
+    private double longitude;
 
+    private double latitude;
 
-    public HobbyWeb() {    }
-
-    public HobbyWeb(String title) {
-        this.title = title;
-    }
-
-    public HobbyWeb(String title, String description) {
-        this.title = title;
-        this.description = description;
-    }
-
-
-    public HobbyWeb(long id, String title, String description) {
+    public PlaceWeb(long id, String title, String description, double longitude, double latitude) {
         this.id = id;
         this.title = title;
         this.description = description;
+        this.longitude = longitude;
+        this.latitude = latitude;
     }
-
-
 
     public long getId() {
         return id;
@@ -63,11 +46,19 @@ public class HobbyWeb {
         this.description = description;
     }
 
-    public Set<allProject.entity.Contact> getContacts() {
-        return contacts;
+    public double getLongitude() {
+        return longitude;
     }
 
-    public void setContacts(Set<Contact> contacts) {
-        this.contacts = contacts;
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 }

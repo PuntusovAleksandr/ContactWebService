@@ -2,8 +2,10 @@ package com.aleksandr.controller;
 
 
 import allProject.entity.Hobby;
+import allProject.entity.Place;
 import allProject.service.ContactService;
 import com.aleksandr.ModelWeb.HobbyWeb;
+import com.aleksandr.ModelWeb.PlaceWeb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,15 +42,27 @@ public class ControllerMain {
 //        System.out.println(hobbyWebs.size());
 //        return modelAndView;
 //    }
-    @RequestMapping(value = "/#get_all_hobbies", method = RequestMethod.GET)
-    public @ResponseBody
-    Set<HobbyWeb> getAllHobby(){
+
+
+    @RequestMapping(value = "/getHobbies", method = RequestMethod.GET)
+    public @ResponseBody Set<HobbyWeb> getAllHobby(){
         Set<Hobby> hobbies = contactService.getAllHobbies();
         Set<HobbyWeb> hobbyWebs = new HashSet<>();
         for (Hobby hobby : hobbies){
             hobbyWebs.add(new HobbyWeb(hobby.getId(), hobby.getTitle(), hobby.getDescription()));
         }
         return hobbyWebs;
+    }
+
+
+    @RequestMapping(value = "/getPlace", method = RequestMethod.GET)
+    public @ResponseBody Set<PlaceWeb> getAllPlace(){
+        Set<Place> places = contactService.getAllPlace();
+        Set<PlaceWeb> placeWebs = new HashSet<>();
+        for (Place place : places){
+            placeWebs.add(new PlaceWeb(place.getId(), place.getTitle(), place.getDescription(), place.getLatitude(), place.getLongitude()));
+        }
+        return placeWebs;
     }
 
 }

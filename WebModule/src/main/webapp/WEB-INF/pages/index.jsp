@@ -26,12 +26,15 @@
   <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="resources/js/bootstrap-datepicker.js"></script>
 
+
+
+
 </head>
 
 
 <body>
 
-<script>$(document).ready(function(){alert("hello!")})</script>
+<%--<script>$(document).ready(function(){alert("hello!")})</script>--%>
 
 <div class="container-fluid">
 
@@ -118,7 +121,7 @@
                   <a href="#ddelete_hobby" target="_blank" tabindex="-1" data-toggle="modal">Delete hobby</a>
                 </li>
                 <li class="select">
-                  <a href="#get_all_hobbies" id="getAllHobbies" target="_blank" tabindex="-1" data-toggle="modal">All hobbies</a>
+                  <a href="#get_all_hobbies" id="getAllHobbies" onclick="allHobbies()" target="_blank" tabindex="-1" data-toggle="modal">All hobbies</a>
                 </li>
               </ul>
             </li>
@@ -133,7 +136,7 @@
                   <a href="#delete_place" target="_blank" tabindex="-1" data-toggle="modal">Delete place</a>
                 </li>
                 <li class="select">
-                  <a href="#get_all__place" target="_blank" tabindex="-1" data-toggle="modal">All places</a>
+                  <a href="#get_all__place" id="getAllPlace" target="_blank" tabindex="-1" data-toggle="modal">All places</a>
                 </li>
               </ul>
             </li>
@@ -272,16 +275,11 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${hobbies}" var="hobby">
-          <tr>
-            <td>${hobby.id}</td>
-            <td>${hobby.title}</td>
-            <td>${hobby.description}</td>
-          </tr>
-        </c:forEach>
+
+
         </tbody>
       </table>
-      <button class="button" id="bottom-panel"> Проверка JQuery </button>
+      <%--<button class="button" id="bottom-panel" onclick="allHobbies()"> Проверка JQuery </button>--%>
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Ok</button>
@@ -331,32 +329,12 @@
           <th>№ id</th>
           <th>Title</th>
           <th>Description</th>
-          <th>Longitude</th>
           <th>Latitude</th>
+          <th>Longitude</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>dff</td>
-          <td>erqg</td>
-          <td>erq</td>
-          <td>erqv</td>
-          <td>erqv</td>
-        </tr>
-        <tr>
-          <td>ve</td>
-          <td>v</td>
-          <td></td>
-          <td>qefb</td>
-          <td>qefb</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>qerb</td>
-          <td></td>
-          <td>qbv</td>
-          <td>qbv</td>
-        </tr>
+
         </tbody>
       </table>
     </div>
