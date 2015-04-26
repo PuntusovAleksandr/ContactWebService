@@ -25,6 +25,12 @@
         <processorPath useClasspath="true" />
         <module name="LogicalModule" />
         <module name="ProbaCreateWeb" />
+      </profile>
+      <profile default="false" name="Annotation profile for WebModule" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="WebModule" />
       </profile>
     </annotationProcessing>

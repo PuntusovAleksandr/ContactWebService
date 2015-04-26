@@ -26,7 +26,7 @@ public class ControllerMain {
 
 
 
-    @RequestMapping(value = "/#get_all_hobbies", method = RequestMethod.GET)
+    @RequestMapping(value = "/#getAllHobbies", method = RequestMethod.GET)
     public ModelAndView getAllHobbies(){
         ModelAndView modelAndView = new ModelAndView();
         Set<Hobby> hobbies = contactService.getAllHobbies();

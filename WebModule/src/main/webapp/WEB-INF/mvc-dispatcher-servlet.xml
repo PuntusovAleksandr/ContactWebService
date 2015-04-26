@@ -37,8 +37,8 @@
 
 
     <jdbc:embedded-database id="dataSource" type="H2">
-        <jdbc:script location="classpath:/schema.sql"/>
-        <jdbc:script location="classpath:/data-base.sql"/>
+        <jdbc:script location="classpath:schema.sql"/>
+        <jdbc:script location="classpath:data-base.sql"/>
     </jdbc:embedded-database>
 
     <mvc:annotation-driven />

@@ -1,10 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="ru">
-
+<!DOCTYPE html>
 <!--<![endif]-->
-
 <head>
   <meta charset="utf-8" />
   <title>Contact Web Service</title>
@@ -14,6 +12,7 @@
   <link rel="shortcut icon" href="favicon.png" />
   <link rel="stylesheet" href="resources/libs/bootstrap/bootstrap-grid-3.3.1.min.css" />
   <link rel="stylesheet" href="resources/libs/bootstrap/bootstrap.css" />
+  <link rel="stylesheet" href="resources/libs/bootstrap/bootstrap-responsive.css">
   <link rel="stylesheet" href="resources/libs/font-awesome-4.2.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="resources/libs/fancybox/jquery.fancybox.css" />
   <link rel="stylesheet" href="resources/libs/owl-carousel/owl.carousel.css" />
@@ -21,10 +20,18 @@
   <link rel="stylesheet" href="resources/css/fonts.css" />
   <link rel="stylesheet" href="resources/css/main.css" />
   <link rel="stylesheet" href="resources/css/media.css" />
+
+  <script type="text/javascript" src="resources/libs/jquery/jquery-2.1.1.js"></script>
+  <script type="text/javascript" src="resources/js/scripts.js"></script>
+  <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="resources/js/bootstrap-datepicker.js"></script>
+
 </head>
 
 
 <body>
+
+<script>$(document).ready(function(){alert("hello!")})</script>
 
 <div class="container-fluid">
 
@@ -111,7 +118,7 @@
                   <a href="#ddelete_hobby" target="_blank" tabindex="-1" data-toggle="modal">Delete hobby</a>
                 </li>
                 <li class="select">
-                  <a href="#get_all_hobbies" target="_blank" tabindex="-1" data-toggle="modal">All hobbies</a>
+                  <a href="#get_all_hobbies" id="getAllHobbies" target="_blank" tabindex="-1" data-toggle="modal">All hobbies</a>
                 </li>
               </ul>
             </li>
@@ -220,7 +227,7 @@
       <button class="btn" data-dismiss="modal">Ok</button>
     </div>
   </div>
-<%--++++++++++++++++++++++++++++++++++--%>
+  <%--++++++++++++++++++++++++++++++++++--%>
   <div class="modal  fade" id="add_hobby" tabindex="-1" role="dialog">
     <div class="modal-header">
       <button class="close" type="button" data-dismiss="modal">x</button>
@@ -265,15 +272,16 @@
         </tr>
         </thead>
         <tbody>
-            <c:forEach items="${hobbies}" var="hobby">
-              <tr>
-                <td>${hobby.id}</td>
-                <td>${hobby.title}</td>
-                <td>${hobby.description}</td>
-              </tr>
-            </c:forEach>
+        <c:forEach items="${hobbies}" var="hobby">
+          <tr>
+            <td>${hobby.id}</td>
+            <td>${hobby.title}</td>
+            <td>${hobby.description}</td>
+          </tr>
+        </c:forEach>
         </tbody>
       </table>
+      <button class="button" id="bottom-panel"> Проверка JQuery </button>
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Ok</button>
@@ -417,7 +425,8 @@
 <script src="resources/libs/countdown/jquery.countdown-ru.js"></script>
 <script src="resources/libs/landing-nav/navigation.js"></script>
 <script src="resources/js/common.js"></script>
-<script src="resources/js/bootstrap.min.js"></script>
+
+
 <!-- Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->
 <!-- Google Analytics counter --><!-- /Google Analytics counter -->
 </body>
