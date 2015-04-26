@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -26,19 +26,29 @@ public class ControllerMain {
 
 
 
-    @RequestMapping(value = "/#getAllHobbies", method = RequestMethod.GET)
-    public ModelAndView getAllHobbies(){
-        ModelAndView modelAndView = new ModelAndView();
+//    @RequestMapping(value = "/#get_all_hobbies", method = RequestMethod.GET)
+//    public ModelAndView getAllHobbies(){
+//        ModelAndView modelAndView = new ModelAndView();
+//        Set<Hobby> hobbies = contactService.getAllHobbies();
+//        Set<HobbyWeb> hobbyWebs = new HashSet<>();
+//        for (Hobby hobby : hobbies){
+//            hobbyWebs.add(new HobbyWeb(hobby.getId(), hobby.getTitle(), hobby.getDescription()));
+//        }
+//        modelAndView.addObject("hobbies", hobbyWebs);
+//        modelAndView.setViewName("index");
+//        System.out.println(hobbies.size());
+//        System.out.println(hobbyWebs.size());
+//        return modelAndView;
+//    }
+    @RequestMapping(value = "/#get_all_hobbies", method = RequestMethod.GET)
+    public @ResponseBody
+    Set<HobbyWeb> getAllHobby(){
         Set<Hobby> hobbies = contactService.getAllHobbies();
         Set<HobbyWeb> hobbyWebs = new HashSet<>();
         for (Hobby hobby : hobbies){
             hobbyWebs.add(new HobbyWeb(hobby.getId(), hobby.getTitle(), hobby.getDescription()));
         }
-        modelAndView.addObject("hobbies", hobbyWebs);
-        modelAndView.setViewName("index");
-        System.out.println(hobbies.size());
-        System.out.println(hobbyWebs.size());
-        return modelAndView;
+        return hobbyWebs;
     }
 
 }
