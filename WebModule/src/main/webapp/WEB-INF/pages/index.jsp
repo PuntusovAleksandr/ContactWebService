@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="resources/css/media.css" />
 
   <script type="text/javascript" src="resources/libs/jquery/jquery-2.1.1.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.js"></script>
   <script type="text/javascript" src="resources/js/scripts.js"></script>
   <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="resources/js/bootstrap-datepicker.js"></script>
@@ -106,7 +107,7 @@
                   <a href="#delete_contact" tabindex="-1" data-toggle="modal">Delete contact</a>
                 </li>
                 <li class="select">
-                  <a href="#get_all_contacts" target="_blank" tabindex="-1" data-toggle="modal">All contacts</a>
+                  <a href="#get_all_contacts" id="getAllContacts" target="_blank" tabindex="-1" data-toggle="modal">All contacts</a>
                 </li>
               </ul>
             </li>
@@ -165,27 +166,27 @@
       <h3>Create new contact</h3>
     </div>
     <div class="modal_body">
-      <input class="modal_body_input" type="text" name="name" placeholder="Name..." required />
-      <input class="modal_body_input" type="text" name="last_name" placeholder="Last name..." required />
-      <input class="modal_body_input" type="text" name="birth_day" placeholder="Birth  yyyy-mm-dd" required >
+      <input id="add_firstName" class="modal_body_input" type="text" name="name" placeholder="Name..." required />
+      <input id="add_lastName" class="modal_body_input" type="text" name="last_name" placeholder="Last name..." required />
+      <input id="add_birthDay" class="modal_body_input" type="text" name="birth_day" placeholder="Birth  yyyy-mm-dd" required >
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
-      <button class="btn btn-primary">Save</button>
+      <button id="addContact" data-dismiss="modal"  class="btn btn-primary">Save</button>
     </div>
   </div>
 
   <div class="modal  fade" id="delete_contact" tabindex="-1" role="dialog">
     <div class="modal-header">
       <button class="close" type="button" data-dismiss="modal">x</button>
-      <h3>Delete new contact</h3>
+      <h3>Delete contact</h3>
     </div>
     <div class="modal_body">
       <input class="modal_body_input" type="text" name="delete_contact_from_list"  placeholder="Name contact..." required />
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
-      <button class="btn btn-primary">Save</button>
+      <button  id="deleteContact" class="btn btn-primary">Save</button>
     </div>
   </div>
 
@@ -205,24 +206,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>dff</td>
-          <td>erqg</td>
-          <td>erq</td>
-          <td>erqv</td>
-        </tr>
-        <tr>
-          <td>ve</td>
-          <td>v</td>
-          <td></td>
-          <td>qefb</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>qerb</td>
-          <td></td>
-          <td>qbv</td>
-        </tr>
+
+
         </tbody>
       </table>
     </div>
@@ -237,12 +222,12 @@
       <h3>Add hobby</h3>
     </div>
     <div class="modal_body">
-      <input class="modal_body_input" type="text" name="title_hobby" placeholder="Title..." required />
-      <input class="modal_body_input" type="text" name="description_hobby" placeholder="Description..." required />
+      <input id="add_titleHobby" class="modal_body_input" type="text" name="title_hobby" placeholder="Title..." required />
+      <input id="add_descriptionHobby" class="modal_body_input" type="text" name="description_hobby" placeholder="Description..." required />
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
-      <button class="btn btn-primary">Save</button>
+      <button id="addHobby"  class="btn btn-primary" data-dismiss="modal">Save</button>
     </div>
   </div>
 
@@ -292,14 +277,14 @@
       <h3>Create new place</h3>
     </div>
     <div class="modal_body">
-      <input class="modal_body_input" type="text" name="place" placeholder="Title..." required />
-      <input class="modal_body_input" type="text" name="description_place" placeholder="Description..." required />
-      <input class="modal_body_input" type="text" name="longitude_place" placeholder="Longitude..." required />
-      <input class="modal_body_input" type="text" name="latitude_place" placeholder="Latitude..." required />
+      <input id="add_titlePlace" class="modal_body_input" type="text" name="place" placeholder="Title..." required />
+      <input id="add_descriptionPlace" class="modal_body_input" type="text" name="description_place" placeholder="Description..." required />
+      <input id="add_longitude" class="modal_body_input" type="text"  name="longitude_place" placeholder="Longitude..." required />
+      <input id="add_latitude" class="modal_body_input" type="text" name="latitude_place" placeholder="Latitude..." required />
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
-      <button class="btn btn-primary">Save</button>
+      <button id="addPlace" class="btn btn-primary" data-dismiss="modal" >Save</button>
     </div>
   </div>
 

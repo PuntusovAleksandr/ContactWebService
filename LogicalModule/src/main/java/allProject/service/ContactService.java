@@ -71,4 +71,6 @@ public interface ContactService {
     List<String> getAllMessage();
 
     void createNewMessageFromTo(String s, long id, long id1);
+
+
 }

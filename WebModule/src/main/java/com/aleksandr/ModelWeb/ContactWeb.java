@@ -29,6 +29,19 @@ public class ContactWeb {
         this.lastName = lastName;
     }
 
+    public ContactWeb(long id, String firstName, String lastName) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public ContactWeb(long id, String firstName, String lastName, Date birthDate) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+    }
+
     public ContactWeb(String firstName) {
         this.firstName = firstName;
     }
