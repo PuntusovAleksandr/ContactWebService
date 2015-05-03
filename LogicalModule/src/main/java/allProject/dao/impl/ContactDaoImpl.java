@@ -87,5 +87,18 @@ public class ContactDaoImpl implements ContactDao{
         return sessionFactory.getCurrentSession().createQuery(stringQuery).setParameter("id", id).list();
     }
 
+    @Override
+    @Transactional
+    public long getIdContact(String firstName) {
+        List<Contact> contactList = getAllContact();
+        long idContact = Long.parseLong(null);
+        for (Contact contact : contactList){
+            if (contact.getFirstName().equals(firstName)){
+                idContact=contact.getId();
+            }
+        }
+
+        return idContact;
+    }
 
 }

@@ -94,6 +94,11 @@ public class ContactServiceImpl implements ContactService {
         return contactDao.getAllFriendsFromContact(contact);
     }
 
+    @Override
+    public long getIdContact(String firstName) {
+        return contactDao.getIdContact(firstName);
+    }
+
 
     //HobbyDao
     @Override

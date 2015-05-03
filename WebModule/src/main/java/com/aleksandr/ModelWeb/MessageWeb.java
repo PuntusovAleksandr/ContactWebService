@@ -16,12 +16,28 @@ public class MessageWeb {
 
     private Date date;
 
+    public MessageWeb() {    }
+
+
+
+    public MessageWeb(long fromId, String content) {
+        this.fromId = fromId;
+        this.content = content;
+    }
+
     public MessageWeb(long id, long fromId, Date date, String content, long toId) {
         this.id = id;
         this.fromId = fromId;
         this.date = date;
         this.content = content;
         this.toId = toId;
+    }
+
+    public MessageWeb(long fromId, long toId, String content) {
+        this.fromId = fromId;
+        this.toId = toId;
+        this.content = content;
+        this.date = new Date();
     }
 
     public long getId() {

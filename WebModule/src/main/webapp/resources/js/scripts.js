@@ -4,11 +4,6 @@ $(document).ready(function(){
        alert("hello!");
     });
 
-
-
-
-
-
     $("#addContact").click(function(){
         var firstName = $("#add_firstName").val();
         var lastName = $("#add_lastName").val();
@@ -66,6 +61,50 @@ $(document).ready(function(){
         }
      });
 
+    $("#deleteContact").click(function() {
+       var contact = $("#deleteCont").val();
+        if(contact=="" || contact== undefined){
+            alert("Contact not enter!")
+        }else{
+            alert("in");
+            $.get("/deleteContact", {
+                contact: contact
+            },
+                function(date){
+                    alert(""+ date);
+                });
+        }
+    });
+
+    $("#delHobby").click(function() {
+       var hobby = $("#deleteHobby").val();
+        if(hobby=="" || hobby== undefined){
+            alert("Hobby not enter!")
+        }else{
+            alert("in");
+            $.get("/deleteHobby", {
+                hobby: hobby
+            },
+                function(date){
+                    alert(""+ date);
+                });
+        }
+    });
+
+    $("#delPlace").click(function() {
+       var place = $("#deletePlace").val();
+        if(place=="" || place== undefined){
+            alert("Place not enter!")
+        }else{
+            alert("in");
+            $.get("/deletePlace", {
+                place: place
+            },
+                function(date){
+                    alert(""+ date);
+                });
+        }
+    });
 
     $("#getAllContacts").click(function(){
          $("#t_contact").find("tr:gt(0)").remove();
@@ -77,7 +116,6 @@ $(document).ready(function(){
         });
      });
 
-
      $("#getAllHobbies").click(function(){
          $("#t_hobby").find("tr:gt(0)").remove();
          $.get("/getHobbies", {}, function (data){
@@ -87,7 +125,6 @@ $(document).ready(function(){
             });
         });
      });
-
 
     $("#getAllPlace").click(function(){
         $("#t_place").find("tr:gt(0)").remove();
@@ -100,27 +137,42 @@ $(document).ready(function(){
         });
     });
 
-    //$("#btn-addContact-submit").click(function(){
-    //    var firstName = $("#firstName").val();
-    //    var lastName = $("#lastName").val();
-    //    var birthDate = $("#birthDate").val();
-    //    if(firstName === "" || firstName == undefined){
-    //        alert("First Name is undefined");
-    //    }else if(lastName === "" || firstName == undefined){
-    //        alert("Last Name is undefined");
-    //    }else if(birthDate === "" || birthDate == undefined){
-    //        alert("Birth Date is undefined");
-    //    }else {
-    //        alert("in");
-    //        $.get("/addContact", {
-    //                firstName: firstName,
-    //                lastName: lastName, birthDate: birthDate
-    //            },
-    //            function (data) {
-    //                alert("" + data);
-    //            });
-    //    }
-    //});
+    $("#addMessage").click(function(){
+        var contactFrom = $("#contactFrom").val();
+        var contactTo = $("#contactTo").val();
+        var newMessage = $("#newMessage").val();
+        if(contactFrom=="" || contactFrom == undefined ||
+            contactTo=="" || contactTo == undefined ||
+                newMessage=="" || newMessage == undefined){
+            alert("Enter all data");
+        }else {
+            alert("in");
+            $.get("/addMessage", {
+                    contactFrom: contactFrom,
+                    contactTo: contactTo,
+                    newMessage: newMessage
+                },
+                function (data) {
+                    alert("" + data);
+                });
+        }
+    });
+
+    $("#getAllMessage").click(function(){
+        var contact = $("#allMes");
+            if(contact =="" || contact == undefined){
+                alert("Enter contact");
+            }else {
+                alert("in");
+                $.get("/getAllMessage", {
+                        contact: contact
+                    },
+                    function (data) {
+                        alert("" + data);
+                    });
+            }
+    });
+
 
 
 

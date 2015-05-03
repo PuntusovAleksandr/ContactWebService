@@ -182,11 +182,11 @@
       <h3>Delete contact</h3>
     </div>
     <div class="modal_body">
-      <input class="modal_body_input" type="text" name="delete_contact_from_list"  placeholder="Name contact..." required />
+      <input id="deleteCont" class="modal_body_input" type="text" name="delete_contact_from_list"  placeholder="Name contact..." required />
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
-      <button  id="deleteContact" class="btn btn-primary">Save</button>
+      <button  id="deleteContact" data-dismiss="modal" class="btn btn-primary">Save</button>
     </div>
   </div>
 
@@ -237,11 +237,11 @@
       <h3>Delete hobby</h3>
     </div>
     <div class="modal_body">
-      <input class="modal_body_input" type="text" name="delete_hobby_from_list" placeholder="Name hobby..." required />
+      <input id="deleteHobby" class="modal_body_input" type="text" name="delete_hobby_from_list" placeholder="Name hobby..." required />
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
-      <button class="btn btn-primary">Save</button>
+      <button id="delHobby"  data-dismiss="modal" class="btn btn-primary">Save</button>
     </div>
   </div>
 
@@ -294,11 +294,11 @@
       <h3>Delete place</h3>
     </div>
     <div class="modal_body">
-      <input class="modal_body_input" type="text" name="delete_place_from_list" placeholder="Place title..." required />
+      <input id="deletePlace" class="modal_body_input" type="text" name="delete_place_from_list" placeholder="Place title..." required />
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
-      <button class="btn btn-primary">Save</button>
+      <button id="delPlace" data-dismiss="modal" class="btn btn-primary">Save</button>
     </div>
   </div>
 
@@ -334,13 +334,13 @@
       <h3>Add new message</h3>
     </div>
     <div class="modal_body">
-      <input class="modal_body_input" type="text" name="contact_from" placeholder="Contact from..." required />
-      <input class="modal_body_input" type="text" name="contact_to" placeholder="Contact to..." required />
-      <input class="modal_body_input" type="text" name="message" placeholder="Message..." required />
+      <input id="contactFrom" class="modal_body_input" type="text" name="contact_from" placeholder="Contact from..." required />
+      <input id="contactTo" class="modal_body_input" type="text" name="contact_to" placeholder="Contact to..." required />
+      <input id="newMessage" class="modal_body_input" type="text" name="message" placeholder="Message..." required />
     </div>
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal">Cancel</button>
-      <button class="btn btn-primary">Save</button>
+      <button id="addMessage" class="btn btn-primary" data-dismiss="modal">Save</button>
     </div>
   </div>
 

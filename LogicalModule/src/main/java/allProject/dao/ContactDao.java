@@ -24,4 +24,6 @@ public interface ContactDao {
     void addFrienfShip(Contact first, Contact second);
 
     List<Contact> getAllFriendsFromContact(Contact contact);
+
+    long getIdContact(String firstName);
 }

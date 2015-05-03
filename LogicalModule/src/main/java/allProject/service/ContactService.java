@@ -30,7 +30,7 @@ public interface ContactService {
     Set<Hobby> getHobbiesFromContact(Contact contact);
     void addFriendship(Contact first, Contact second);
     List<Contact> getAllFriendsFromContact(Contact contact);
-
+    long getIdContact(String firstName);
 
     //HobbyDao
     public void createHobby(String title, String description);
@@ -71,6 +71,7 @@ public interface ContactService {
     List<String> getAllMessage();
 
     void createNewMessageFromTo(String s, long id, long id1);
+
 
 
 }
